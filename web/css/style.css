@@ -4,6 +4,10 @@ footer {
   margin: 20px;
   font-size: 12px;
 } 
+body{
+  background-color:rgb(102, 102, 102)
+}
+
 
 .toast {
     /* dirty: below 'card' button  */
