@@ -25,13 +25,18 @@ insert into products (id, name, description, code, price, typemerk_id) values (4
 insert into products (id, name, description, code, price) values (2, 'Fortnite Koptelefoon', 'Deze koptelefoon is voor de beste fortnite gamers. Deze koptelefoon heeft een ingebouwde surround sound technologie.', '077030122-3', 54.99);
 insert into products (id, name, description, code, price) values (5, 'Sony Koptelefoon', 'De geluidskwaliteit van deze koptelefoon is uitstekend. Het is van een kwalitatief merk en het bevat goede noise suppression.', '445924201-X', 75);
 insert into products (id, name, description, code, price) values (1, 'Deluxe Koptelefoon', 'De koptelefoon voor de mensen die houden van chique dingen. De geluidskwaliteit is heel goed en het heeft goede surround sound functies.', '693155505-7', 219.99);
-insert into products (id, name, description, code, price) values (6, 'Zwarte Koptelefoon', 'Een basic zwarte koptelefoon met redelijke audio kwaliteit', '686928463-6', 19.99);
+insert into products (id, name, description, code, price) values (6, 'Zwarte Koptelefoon', 'Een basic zwarte koptelefoon met redelijke audio kwaliteit', '686928463-6', 19.99, 1);
 insert into products (id, name, description, code, price) values (3, 'Katoortjes Koptelefoon', 'De Koptelefoon die je hoogswaarschijnlijk met heel veel spijt gaat kopen. Het heeft redelijke audio kwaliteit en het heeft noise suppression.', '492662523-7', 49.99);
+insert into products (id, name, description, code, price, typemerk_id) values
+insert into products (id, name, description, code, price, typemerk_id) values
+insert into products (id, name, description, code, price, typemerk_id) values
+insert into products (id, name, description, code, price, typemerk_id) values
 
 CREATE TABLE merken (
   id INTEGER PRIMARY KEY,
   typemerk TEXT
 );
+
 
 CREATE T
 
