@@ -53,6 +53,9 @@
             <ul class="product-properties">
             <li><span class="propert-name">Prijs:</span><span class="product_price"></span></li>
             <li><span class="propert-name">Code:</span><span class="product_code"></span></li>
+            <li><span class="propert-name">Rating: </span><span class="product_rating"></span></li>
+						<li><span class="propert-name">Merk: </span><span class="product_merk"></span></li>
+						<li><span class="propert-name">Jaar: </span><span class="product_jaar"></span></li>
             </ul>
             <input class="product_amount" type="number" value="1" min="1">
             <input class="product_id" type="hidden" name="id" data-json="">
@@ -90,6 +93,9 @@
                 clone.querySelector(".product_id").value = product.id
                 clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
                 clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
+                clone.querySelector(".product_rating").textContent = `${product.rating}`
+			          clone.querySelector(".product_merk").textContent = `${product.merk}`
+			          clone.querySelector(".product_jaar").textContent = `${product.jaar}`
 
                 container.appendChild(clone)
             } else {

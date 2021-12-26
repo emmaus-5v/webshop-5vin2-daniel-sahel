@@ -70,10 +70,18 @@ function getProducts(request, response) {
   const category_id = parseInt(request.query.category)
   let data = []
   if (category_id > 0) {
-    const sqlOpdracht = db.prepare('SELECT * FROM products WHERE category_id = ? ORDER BY name ASC')
+    const sqlOpdracht = db.prepare(`SELECT products.*, ratings.rating, merken.merk, jaar_van_uitgave.jaar FROM products 
+    JOIN ratings ON products.rating_id = ratings.id 
+    JOIN merken ON products.merken_id = merken.id
+    JOIN jaar_van_uitgave ON products.jaar_id = jaar_van_uitgave.id
+    ORDER BY name ASC`)
     data = sqlOpdracht.all(category_id)
   } else {
-    const sqlOpdracht = db.prepare('SELECT * FROM products ORDER BY name ASC')
+    const sqlOpdracht = db.prepare(`SELECT products.*, ratings.rating, merken.merk, jaar_van_uitgave.jaar FROM products 
+    JOIN ratings ON products.rating_id = ratings.id 
+    JOIN merken ON products.merken_id = merken.id
+    JOIN jaar_van_uitgave ON products.jaar_id = jaar_van_uitgave.id 
+    ORDER BY name ASC`)
     data = sqlOpdracht.all()
   }
   // console.log(JSON.stringify(data, null, 2))
@@ -86,7 +94,11 @@ function getProductById(request, response) {
 
   let data = []
   const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE id = ?')
+  const sqlOpdracht = db.prepare(`SELECT products.*, ratings.rating, merken.merk, jaar_van_uitgave.jaar FROM products 
+  JOIN ratings ON products.rating_id = ratings.id 
+  JOIN merken ON products.merken_id = merken.id
+  JOIN jaar_van_uitgave ON products.jaar_id = jaar_van_uitgave.id
+  ORDER BY name ASC`)
   data = sqlOpdracht.all(product_id)
   response.status(200).json(data[0])
 }
