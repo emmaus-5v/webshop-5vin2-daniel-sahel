@@ -98,6 +98,7 @@ function getProductById(request, response) {
   JOIN ratings ON products.rating_id = ratings.id 
   JOIN merken ON products.merken_id = merken.id
   JOIN jaar_van_uitgave ON products.jaar_id = jaar_van_uitgave.id
+  WHERE products.id = ?
   ORDER BY name ASC`)
   data = sqlOpdracht.all(product_id)
   response.status(200).json(data[0])
